@@ -2,6 +2,8 @@ import java.util.Scanner;
 import java.io.*;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 /*
 inicio:
 X=12;
@@ -31,7 +33,9 @@ public class leitor{
         
         static String valorX= "";
         static String valorY= "";
+        static Path path = Paths.get("../AC2/testeula.hex");
         public static void main(String[] args){
+            initializeFile();
             
             try{
             File lt = new File("../AC2/testeula.ula");
@@ -170,17 +174,39 @@ public class leitor{
         }
         public static void leitura(String comando){
             String convert="";
+            String a="";
             int num=-1;
             int length = comando.length();
             for(int i = 2; i<=length-2; i++){//X=1; comando0 + =1 + valor2/3 + ;3/4           X   =    1    ;
-                convert = convert + comando.charAt(i);
+                    convert = convert + comando.charAt(i);
             }
+            
             if(comando.charAt(0)=='X'){
                 num = Integer.parseInt(convert);
                 valorX = Integer.toHexString(num);
+                if(valorX.charAt(0)>='a' && valorX.charAt(0)<='f'){
+                    valorX = valorX.toUpperCase();
+                }
+
             }else{
                 num = Integer.parseInt(convert);
                 valorY = Integer.toHexString(num);
+                if(valorY.charAt(0)>='a' && valorY.charAt(0)<='f'){
+                    valorY = valorY.toUpperCase();
+                }
+            }
+        }
+        public boolean alreadyExists() {
+            try {
+                return path.toFile().exists();
+                } catch (Exception e) {
+                return false;
+                }
+            }
+
+        static public void initializeFile() {
+            if (path.toFile().exists()) {
+                path.toFile().delete();
             }
         }
 }
