@@ -5,43 +5,26 @@ import java.io.FileNotFoundException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 /*
-inicio:
-X=12;
-Y=6;
-W=AeB;
-X=10;
-Y=3;
-W=AoB;
-W=nAeB;
-X=13;
-W=Bn;
-fim.
-
-saida:
-C6B
-A3A
-A34
-D31
-*/
-/*
   *programa:  'inicio:' ... 'fim.' 
   *intrução: ';'
   *identificador: 'X' , 'Y' , 'W'
   *operador: 'n' 'e' 'o' 'x' 'copia'
 */
 public class leitor{
-        
+        /*
+        *variaveis globais pois somente um metodo que modifica seus valores
+        */
         static String valorX= "";
         static String valorY= "";
-        static Path path = Paths.get("../AC2/testeula.hex");
+        static Path path = Paths.get("../AC2/testeula.hex");//seleciona o local que sera escrito
         public static void main(String[] args){
             initializeFile();
             
             try{
-            File lt = new File("../AC2/testeula.ula");
+            File lt = new File("../AC2/testeula.ula");//seleciona o local que sera lido
             Scanner sc = new Scanner(lt);
             String comando = sc.nextLine();
-            if(comando.length() == 7 && comando.equals("inicio:")){
+            if(comando.length() == 7 && comando.equals("inicio:")){//programa:  'inicio:' ... 'fim.' 
                 do{
                     comando=sc.nextLine();
                     if(comando.charAt(0) == 'X' || comando.charAt(0) == 'Y'){
@@ -55,6 +38,11 @@ public class leitor{
                 System.out.println("ERRO-nao encontrado");
             }
         } 
+        /*
+        *metodo que gera as saidas do programa
+        *
+        *nele nao ocorre nenhuma atribuicao de valor(X,Y,W), somente escrita em arquivo
+        */
         public static void  escrita(String comando){
             String convert="";
             String result="";
@@ -68,11 +56,11 @@ public class leitor{
                 arq.seek(arq.length());
                 switch(convert){
                     case "An"://0
-                        System.out.println(valorX + "" + valorY +"" + '0');
-                        result = valorX + "" + valorY +"" + '0';
-                        result_arq=result.getBytes();
-                        arq.write(result_arq);
-                        arq.writeBytes("\n");
+                        System.out.println(valorX + "" + valorY +"" + '0');//print para teste
+                        result = valorX + "" + valorY +"" + '0';//gera a string com os valores que seram enviados para o arquivo
+                        result_arq=result.getBytes();//converte a string em um vetor de bytes
+                        arq.write(result_arq);//escrever no arquivo
+                        arq.writeBytes("\n");//pular uma linha no arquivo
                         break;
                     case "Bn"://1
                         System.out.println(valorX + "" + valorY +"" + '1');
@@ -188,6 +176,13 @@ public class leitor{
                 System.out.println("ERRO-nao aberto");
             }
         }
+        /*
+        *metodo para atribuir os valores recebidos
+        *
+        *tambem mantem a formatacao com todas as letras maiusculas
+        *
+        *OBS: nao gera nenhuma saida, somente efetua a troca de valores
+        */
         public static void leitura(String comando){
             String convert="";
             String a="";
@@ -212,6 +207,10 @@ public class leitor{
                 }
             }
         }
+        /*
+        *testa no inicio do programa se o arquivo testeula.hex
+        *ja existe. se existir, exclui lo
+        */
         public boolean alreadyExists() {
             try {
                 return path.toFile().exists();
