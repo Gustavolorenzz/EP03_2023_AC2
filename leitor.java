@@ -72,96 +72,112 @@ public class leitor{
                         result = valorX + "" + valorY +"" + '0';
                         result_arq=result.getBytes();
                         arq.write(result_arq);
+                        arq.writeBytes("\n");
                         break;
                     case "Bn"://1
                         System.out.println(valorX + "" + valorY +"" + '1');
                         result = valorX + "" + valorY +"" + '1';
                         result_arq=result.getBytes();
                         arq.write(result_arq);
+                        arq.writeBytes("\n");
                         break;
                     case "umL"://2
                         System.out.println(valorX + "" + valorY +"" + '2');
                         result = valorX + "" + valorY +"" + '2';
                         result_arq=result.getBytes();
                         arq.write(result_arq);
+                        arq.writeBytes("\n");
                         break;
                     case "zeroL"://3
                         System.out.println(valorX + "" + valorY +"" + '3');
                         result = valorX + "" + valorY +"" + '3';
                         result_arq=result.getBytes();
                         arq.write(result_arq);
+                        arq.writeBytes("\n");
                         break;
                     case "nAeB"://4
                         System.out.println(valorX + "" + valorY +"" + '4');
                         result = valorX + "" + valorY +"" + '4';
                         result_arq=result.getBytes();
                         arq.write(result_arq);
+                        arq.writeBytes("\n");
                         break;
                     case "nAoB"://5
                         System.out.println(valorX + "" + valorY +"" + '5');
                         result = valorX + "" + valorY +"" + '5';
                         result_arq=result.getBytes();
                         arq.write(result_arq);
+                        arq.writeBytes("\n");
                         break;
                     case "AxB"://6
                         System.out.println(valorX + "" + valorY +"" + '6');
                         result = valorX + "" + valorY +"" + '6';
                         result_arq=result.getBytes();
                         arq.write(result_arq);
+                        arq.writeBytes("\n");
                         break;
                     case "AeBn"://7
                         System.out.println(valorX + "" + valorY +"" + '7');
                         result = valorX + "" + valorY +"" + '7';
                         result_arq=result.getBytes();
                         arq.write(result_arq);
+                        arq.writeBytes("\n");
                         break;
                     case "AnoB"://8
                         System.out.println(valorX + "" + valorY +"" + '8');
                         result = valorX + "" + valorY +"" + '8';
                         result_arq=result.getBytes();
                         arq.write(result_arq);
+                        arq.writeBytes("\n");
                         break;
                     case "nAxB"://9
                         System.out.println(valorX + "" + valorY +"" + '9');
                         result = valorX + "" + valorY +"" + '9';
                         result_arq=result.getBytes();
                         arq.write(result_arq);
+                        arq.writeBytes("\n");
                         break;
                     case "AoB"://A
                         System.out.println(valorX + "" + valorY +"" + 'A');
                         result = valorX + "" + valorY +"" + 'A';
                         result_arq=result.getBytes();
                         arq.write(result_arq);
+                        arq.writeBytes("\n");
                         break;
                     case "AeB"://B
                         System.out.println(valorX + "" + valorY +"" + 'B');
                         result = valorX + "" + valorY +"" + 'B';
                         result_arq=result.getBytes();
                         arq.write(result_arq);
+                        arq.writeBytes("\n");
                         break;
                     case "AneB"://C
                         System.out.println(valorX + "" + valorY +"" + 'C');
                         result = valorX + "" + valorY +"" + 'C';
                         result_arq=result.getBytes();
                         arq.write(result_arq);
+                        arq.writeBytes("\n");
                         break;
                     case "AoBn"://D
                         System.out.println(valorX + "" + valorY +"" + 'D');
                         result = valorX + "" + valorY +"" + 'D';
                         result_arq=result.getBytes();
                         arq.write(result_arq);
+                        arq.writeBytes("\n");
                         break;
                     case "copiaB"://E
                         System.out.println(valorX + "" + valorY +"" + 'E');
                         result = valorX + "" + valorY +"" + 'E';
                         result_arq=result.getBytes();
                         arq.write(result_arq);
+                        arq.writeBytes("\n");
                         break;
                     case "copiaA"://F
                         System.out.println(valorX + "" + valorY +"" + 'F');
                         result = valorX + "" + valorY +"" + 'F';
                         result_arq=result.getBytes();
                         arq.write(result_arq);
+                        arq.writeBytes("\n");
                         break;
                     default:
                     System.out.println("ERRO.");
